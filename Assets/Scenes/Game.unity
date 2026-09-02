@@ -165,7 +165,7 @@ GameObject:
   - component: {fileID: 357298795}
   - component: {fileID: 357298794}
   m_Layer: 0
-  m_Name: Hexagon Flat Top
+  m_Name: Obstacle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
