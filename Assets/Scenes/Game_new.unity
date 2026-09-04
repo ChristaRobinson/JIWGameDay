@@ -160,7 +160,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1003698578}
     m_Modifications:
     - target: {fileID: 3070490630110215101, guid: e8cf61dbd7a86eb4cbff2c99c0db7788, type: 3}
       propertyPath: m_LocalPosition.x
@@ -204,13 +204,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8130145001923721932, guid: e8cf61dbd7a86eb4cbff2c99c0db7788, type: 3}
       propertyPath: m_Name
-      value: Hexagon Flat Top (3)
+      value: Obstacle
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e8cf61dbd7a86eb4cbff2c99c0db7788, type: 3}
+--- !u!4 &632844941 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3070490630110215101, guid: e8cf61dbd7a86eb4cbff2c99c0db7788, type: 3}
+  m_PrefabInstance: {fileID: 632844940}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &636592008
 GameObject:
   m_ObjectHideFlags: 0
@@ -402,7 +407,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1003698578}
     m_Modifications:
     - target: {fileID: 3070490630110215101, guid: e8cf61dbd7a86eb4cbff2c99c0db7788, type: 3}
       propertyPath: m_LocalPosition.x
@@ -446,20 +451,60 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8130145001923721932, guid: e8cf61dbd7a86eb4cbff2c99c0db7788, type: 3}
       propertyPath: m_Name
-      value: Hexagon Flat Top (1)
+      value: Obstacle
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e8cf61dbd7a86eb4cbff2c99c0db7788, type: 3}
+--- !u!4 &643366695 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3070490630110215101, guid: e8cf61dbd7a86eb4cbff2c99c0db7788, type: 3}
+  m_PrefabInstance: {fileID: 643366694}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1003698577
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1003698578}
+  m_Layer: 0
+  m_Name: Obstacles
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1003698578
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1003698577}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 7895232241540920607}
+  - {fileID: 643366695}
+  - {fileID: 1160999615}
+  - {fileID: 632844941}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1160999614
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1003698578}
     m_Modifications:
     - target: {fileID: 3070490630110215101, guid: e8cf61dbd7a86eb4cbff2c99c0db7788, type: 3}
       propertyPath: m_LocalPosition.x
@@ -503,13 +548,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8130145001923721932, guid: e8cf61dbd7a86eb4cbff2c99c0db7788, type: 3}
       propertyPath: m_Name
-      value: Hexagon Flat Top (2)
+      value: Obstacle
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e8cf61dbd7a86eb4cbff2c99c0db7788, type: 3}
+--- !u!4 &1160999615 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3070490630110215101, guid: e8cf61dbd7a86eb4cbff2c99c0db7788, type: 3}
+  m_PrefabInstance: {fileID: 1160999614}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1257388496
 GameObject:
   m_ObjectHideFlags: 0
@@ -1208,7 +1258,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1003698578}
     m_Modifications:
     - target: {fileID: 3070490630110215101, guid: e8cf61dbd7a86eb4cbff2c99c0db7788, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1228,15 +1278,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3070490630110215101, guid: e8cf61dbd7a86eb4cbff2c99c0db7788, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3070490630110215101, guid: e8cf61dbd7a86eb4cbff2c99c0db7788, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3070490630110215101, guid: e8cf61dbd7a86eb4cbff2c99c0db7788, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3070490630110215101, guid: e8cf61dbd7a86eb4cbff2c99c0db7788, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1252,20 +1302,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8130145001923721932, guid: e8cf61dbd7a86eb4cbff2c99c0db7788, type: 3}
       propertyPath: m_Name
-      value: Hexagon Flat Top
+      value: Obstacle
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e8cf61dbd7a86eb4cbff2c99c0db7788, type: 3}
+--- !u!4 &7895232241540920607 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3070490630110215101, guid: e8cf61dbd7a86eb4cbff2c99c0db7788, type: 3}
+  m_PrefabInstance: {fileID: 7895232241540920606}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1507715851}
-  - {fileID: 7895232241540920606}
   - {fileID: 296702769}
-  - {fileID: 643366694}
-  - {fileID: 1160999614}
-  - {fileID: 632844940}
+  - {fileID: 1003698578}

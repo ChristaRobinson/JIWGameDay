@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5457712891193983668}
   - component: {fileID: 8688310401984650036}
   m_Layer: 0
-  m_Name: Hexagon Flat Top
+  m_Name: Obstacle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
