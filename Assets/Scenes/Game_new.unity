@@ -1475,7 +1475,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   scoreMultiplier: 10
-  thrustforce: 12
+  thrustForce: 8
   uiDocument: {fileID: 2054806058}
   explosionEffect: {fileID: 3985833824605099847, guid: ffffec01174e8f54c9b0f67f5bc945c0, type: 3}
 --- !u!1 &1507715848
