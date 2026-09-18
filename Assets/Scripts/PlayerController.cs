@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
@@ -19,7 +18,6 @@ public class PlayerController : MonoBehaviour
     private Label highScoreText;
     private Label topScoresText;
     private Button restartButton;
-    
 
     public GameObject explosionEffect;
 
@@ -41,7 +39,7 @@ public class PlayerController : MonoBehaviour
             topScores[i] = PlayerPrefs.GetInt("TopScore" + i, 0);
         }
 
-        // Bring your OLD high score into the new Top 3 system
+        // Bring old high score into the Top 3 system
         int oldHighScore = PlayerPrefs.GetInt("HighScore", 0);
 
         if (oldHighScore > topScores[0])
@@ -60,6 +58,7 @@ public class PlayerController : MonoBehaviour
         restartButton.style.display = DisplayStyle.None;
         restartButton.clicked += ReloadScene;
     }
+
     void SaveTopScores()
     {
         for (int i = 0; i < 3; i++)
@@ -69,7 +68,6 @@ public class PlayerController : MonoBehaviour
 
         PlayerPrefs.Save();
     }
-
 
     void UpdateScoreDisplay()
     {
@@ -84,6 +82,7 @@ public class PlayerController : MonoBehaviour
                 "3. " + topScores[2];
         }
     }
+
     void Update()
     {
         elapsedTime += Time.deltaTime;
@@ -92,61 +91,68 @@ public class PlayerController : MonoBehaviour
 
         scoreText.text = "Score: " + score;
 
-       
         if (Mouse.current.leftButton.isPressed)
         {
             // Calculate mouse direction
-            Vector3 mousePos = Camera.main.ScreenToWorldPoint(Mouse.current.position.value);
-            Vector2 direction = (mousePos - transform.position).normalized;
+            Vector3 mousePos = Camera.main.ScreenToWorldPoint(
+                Mouse.current.position.value
+            );
+
+            Vector2 direction =
+                (mousePos - transform.position).normalized;
 
             // Move player in direction of mouse
             transform.up = direction;
             rb.AddForce(direction * thrustForce);
         }
     }
+
     void AddScoreToLeaderboard()
     {
         int finalScore = Mathf.FloorToInt(score);
 
-        if (finalScore <= 0)
-            return;
-
+        // New #1 score
         if (finalScore > topScores[0])
         {
             topScores[2] = topScores[1];
             topScores[1] = topScores[0];
             topScores[0] = finalScore;
         }
-        else if (finalScore > topScores[1])
+
+        // New #2 score
+        else if (finalScore < topScores[0] && finalScore > topScores[1])
         {
             topScores[2] = topScores[1];
             topScores[1] = finalScore;
         }
-        else if (finalScore > topScores[2])
+
+        // New #3 score
+        else if (finalScore < topScores[1] && finalScore > topScores[2])
         {
             topScores[2] = finalScore;
         }
-        else
-        {
-            return;
-        }
 
+        // Update the high score
         highScore = topScores[0];
 
+        // Save the Top 3
         SaveTopScores();
+
+        // Update the screen
         UpdateScoreDisplay();
     }
 
     void OnCollisionEnter2D(Collision2D collision)
     {
         AddScoreToLeaderboard();
-        Destroy(gameObject);
 
         Instantiate(
             explosionEffect,
             transform.position,
             transform.rotation
         );
+
+        Destroy(gameObject);
 
         restartButton.style.display = DisplayStyle.Flex;
     }
