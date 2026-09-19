@@ -9,7 +9,10 @@ public class PlayerController : MonoBehaviour
     private float score = 0f;
 
     public float scoreMultiplier = 10f;
+
     public float thrustForce = 1f;
+    public float playerSpeed = 15f;
+   
 
     private Rigidbody2D rb;
 
@@ -91,22 +94,32 @@ public class PlayerController : MonoBehaviour
 
         scoreText.text = "Score: " + score;
 
-        if (Mouse.current.leftButton.isPressed)
+        if (Mouse.current != null && Mouse.current.leftButton.isPressed)
         {
-            // Calculate mouse direction
+            // Get the mouse position
             Vector3 mousePos = Camera.main.ScreenToWorldPoint(
                 Mouse.current.position.value
             );
 
+            // Calculate direction from player to mouse
             Vector2 direction =
                 (mousePos - transform.position).normalized;
 
-            // Move player in direction of mouse
-            transform.up = direction;
-            rb.AddForce(direction * thrustForce);
+            // Point the player toward the mouse
+            if (direction != Vector2.zero)
+            {
+                transform.up = direction;
+            }
+
+            // Move the player at a constant speed
+            rb.linearVelocity = direction * playerSpeed;
+        }
+        else
+        {
+            // Stop the player when the mouse is released
+            rb.linearVelocity = Vector2.zero;
         }
     }
-
     void AddScoreToLeaderboard()
     {
         int finalScore = Mathf.FloorToInt(score);
